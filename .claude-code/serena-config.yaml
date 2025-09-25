@@ -1,0 +1,173 @@
+serena:
+  master_orchestrator: true
+  performance_awareness: true
+  scalability_monitoring: true
+  claude_code_supervision: true
+
+# Enhanced Role Definitions
+roles:
+  claude_code_supervisor:
+    name: "Claude Code Health Supervisor"
+    responsibilities:
+      - "Continuous health monitoring of Claude Code"
+      - "Intelligent recovery strategy execution"
+      - "Proactive failure prevention"
+      - "Subagent coordination during issues"
+      - "Performance trend analysis"
+      - "Human escalation management"
+    tools: ["health_monitor", "recovery_engine", "load_balancer", "alert_system"]
+
+  architect:
+    name: "System Architect"
+    responsibilities:
+      - "Clean Architecture validation"
+      - "Security pattern review"
+      - "Performance architecture design"
+      - "Scalability planning"
+      - "Technology stack decisions"
+    tools: ["architecture_analyzer", "performance_modeling", "scalability_planner"]
+
+  developer:
+    name: "Flutter Developer"
+    responsibilities:
+      - "Feature implementation"
+      - "Code generation"
+      - "Widget creation"
+      - "API integration"
+      - "Performance optimization"
+    tools: ["flutter_cli", "code_generator", "widget_inspector", "performance_profiler"]
+
+  security_auditor:
+    name: "Security Specialist"
+    responsibilities:
+      - "GDPR compliance validation"
+      - "Authorization audit"
+      - "Firestore rules testing"
+      - "Vulnerability scanning"
+    tools: ["security_scanner", "firestore_validator", "gdpr_checker"]
+
+  performance_engineer:
+    name: "Performance Specialist"
+    responsibilities:
+      - "Performance optimization implementation"
+      - "Scalability architecture review"
+      - "Load testing execution"
+      - "Performance monitoring setup"
+    tools: ["performance_profiler", "load_tester", "apm_tools"]
+
+  reliability_engineer:
+    name: "Site Reliability Engineer"
+    responsibilities:
+      - "Infrastructure reliability"
+      - "Disaster recovery procedures"
+      - "Monitoring and alerting"
+      - "Incident response automation"
+    tools: ["terraform", "monitoring_tools", "automation_scripts"]
+
+  qa_engineer:
+    name: "Quality Assurance"
+    responsibilities:
+      - "Test suite creation"
+      - "Coverage validation (90%+)"
+      - "Integration testing"
+      - "Performance testing"
+    tools: ["test_runner", "coverage_analyzer", "performance_monitor"]
+
+  devops_engineer:
+    name: "DevOps Specialist"
+    responsibilities:
+      - "CI/CD pipeline"
+      - "Firebase deployment"
+      - "Monitoring setup"
+      - "Production readiness"
+    tools: ["firebase_deployer", "ci_cd_manager", "monitoring_setup"]
+
+  ui_ux_designer:
+    name: "UI/UX Designer"
+    responsibilities:
+      - "Pinterest-inspired design"
+      - "Material Design 3"
+      - "Accessibility compliance"
+      - "Responsive layouts"
+    tools: ["design_system", "figma_integration", "accessibility_checker"]
+
+  business_analyst:
+    name: "Business Intelligence"
+    responsibilities:
+      - "Analytics dashboard design"
+      - "KPI identification"
+      - "Role-based metrics"
+      - "Reporting system"
+    tools: ["analytics_engine", "chart_generator", "bi_tools"]
+
+# Enhanced Workflow Orchestration
+workflows:
+  claude_code_health_check:
+    sequence:
+      - role: "claude_code_supervisor"
+        task: "monitor_claude_code_health"
+      - role: "claude_code_supervisor"
+        task: "execute_recovery_if_needed"
+
+  performance_validation:
+    sequence:
+      - role: "performance_engineer"
+        task: "establish_performance_baseline"
+      - role: "performance_engineer"
+        task: "implement_performance_optimizations"
+      - role: "qa_engineer"
+        task: "execute_performance_tests"
+      - role: "architect"
+        task: "validate_performance_architecture"
+
+  scalability_preparation:
+    sequence:
+      - role: "architect"
+        task: "design_scalable_architecture"
+      - role: "reliability_engineer"
+        task: "setup_auto_scaling"
+      - role: "performance_engineer"
+        task: "load_testing_validation"
+      - role: "devops_engineer"
+        task: "deploy_scalability_infrastructure"
+
+  project_initialization:
+    sequence:
+      - role: "architect"
+        task: "create_project_structure"
+      - role: "security_auditor"
+        task: "setup_security_foundation"
+      - role: "ui_ux_designer"
+        task: "create_design_system"
+
+  feature_development:
+    parallel_execution: true
+    coordination: "architect"
+    sequence:
+      - role: "developer"
+        task: "implement_core_features"
+      - role: "ui_ux_designer"
+        task: "create_ui_components"
+      - role: "security_auditor"
+        task: "validate_security_compliance"
+      - role: "qa_engineer"
+        task: "create_test_suites"
+
+  quality_assurance:
+    sequence:
+      - role: "qa_engineer"
+        task: "run_comprehensive_tests"
+      - role: "security_auditor"
+        task: "security_audit"
+      - role: "architect"
+        task: "architecture_validation"
+
+  deployment:
+    sequence:
+      - role: "devops_engineer"
+        task: "pre_deployment_checks"
+      - role: "devops_engineer"
+        task: "deploy_to_production"
+      - role: "devops_engineer"
+        task: "post_deployment_monitoring"
+

@@ -1,0 +1,60 @@
+# .claude-code/repository-structure.yaml
+repository_structure:
+
+  branches:
+    main:
+      purpose: "Production-ready code"
+      protection_rules:
+        - "require_pull_request_reviews"
+        - "require_status_checks"
+        - "require_up_to_date_branches"
+        - "require_signed_commits"
+
+    develop:
+      purpose: "Integration of features"
+      auto_merge_from: ["feature/*", "performance/*", "security/*"]
+      deploy_to: "staging_environment"
+
+    feature_branches:
+      naming: "feature/{subagent-name}/{task-description}"
+      examples:
+        - "feature/ui-ux/pinterest-masonry-grid"
+        - "feature/security/gdpr-compliance"
+        - "feature/performance/database-optimization"
+
+    hotfix_branches:
+      naming: "hotfix/{issue-number}/{description}"
+      auto_deploy: "after_validation"
+
+  commit_conventions:
+    types:
+      - "feat: new feature implementation"
+      - "fix: bug fix"
+      - "perf: performance improvement"
+      - "security: security enhancement"
+      - "docs: documentation update"
+      - "test: testing improvements"
+      - "refactor: code refactoring"
+      - "ci: CI/CD pipeline changes"
+
+    scopes:
+      - "ui-ux: user interface changes"
+      - "backend: server-side changes"
+      - "security: security-related changes"
+      - "performance: performance optimizations"
+      - "analytics: analytics and monitoring"
+      - "claude-code: Claude Code system changes"
+
+  automated_workflows:
+    commit_frequency:
+      subagent_tasks: "after_each_completion"
+      claude_code_work: "every_30_minutes_during_active_development"
+      daily_checkpoint: "18:00_local_time"
+      milestone_completion: "immediate"
+
+    backup_frequency:
+      local_commits: "every_hour_during_development"
+      remote_push: "after_task_completion"
+      emergency_backup: "on_system_instability"
+      milestone_backup: "permanent_retention"
+

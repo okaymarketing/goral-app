@@ -1,0 +1,46 @@
+project:
+  name: "goral-app"
+  type: "flutter-firebase-enterprise"
+  description: "High-performance, scalable multi-role tourism management platform"
+
+# Project Structure
+architecture: "clean-architecture-optimized"
+platforms: ["android", "ios", "web", "desktop"]
+performance_tier: "enterprise-grade"
+scalability_target: "500k_concurrent_users"
+
+# Technology Stack
+tech_stack:
+  frontend: "flutter-optimized"
+  backend: "firebase-performance-tier"
+  database: "firestore-with-optimization"
+  auth: "firebase-auth-scalable"
+  storage: "firebase-storage-cdn"
+  functions: "firebase-functions-auto-scaling"
+  analytics: "firebase-analytics-enhanced"
+  hosting: "firebase-hosting-global"
+  caching: "multi-layer-redis"
+  monitoring: "comprehensive-apm"
+
+# Project Phases
+phases:
+  - name: "foundation-with-performance"
+    duration: "2-3 weeks"
+    priority: "critical"
+    deliverables: ["performance_baseline", "scalability_foundation"]
+
+  - name: "legal-compliance-mvp"
+    duration: "8-10 weeks"
+    priority: "critical"
+    performance_requirements: ["sub_2s_response", "60fps_ui"]
+
+  - name: "international-accessibility"
+    duration: "6-7 weeks"
+    priority: "high"
+    scalability_requirements: ["multi_region", "cdn_optimization"]
+
+  - name: "business-optimization"
+    duration: "4-5 months"
+    priority: "medium"
+    performance_targets: ["world_class_benchmarks"]
+

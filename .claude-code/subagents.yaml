@@ -1,0 +1,107 @@
+subagents:
+  coordination_mode: "orchestrated"
+  master_coordinator: "serena"
+  performance_optimization: true
+  scalability_awareness: true
+
+# Performance Subagent - NEW
+performance_subagent:
+  specialization: "performance_optimization"
+  capabilities:
+    - "flutter_widget_optimization"
+    - "database_query_optimization"
+    - "network_request_optimization"
+    - "caching_strategy_implementation"
+    - "memory_management_optimization"
+    - "animation_performance_tuning"
+  performance_targets:
+    app_launch_time: "under_2_seconds"
+    frame_rate: "consistent_60_fps"
+    memory_usage: "under_100mb"
+  output_formats: ["optimized_code", "performance_reports", "benchmark_results"]
+
+# Scalability Subagent - NEW
+scalability_subagent:
+  specialization: "scalability_engineering"
+  capabilities:
+    - "auto_scaling_configuration"
+    - "load_balancing_setup"
+    - "database_sharding_strategy"
+    - "caching_layer_implementation"
+    - "cdn_configuration"
+    - "multi_region_deployment"
+  scalability_targets:
+    concurrent_users: "500k_users"
+    requests_per_second: "10k_rps"
+    global_latency: "under_200ms"
+  output_formats: ["scaling_configs", "infrastructure_code", "deployment_scripts"]
+
+# Enhanced UI/UX Subagent
+ui_ux_subagent:
+  specialization: "user_interface_design"
+  inspiration_apps: ["pinterest", "airbnb", "instagram"]
+  performance_requirements:
+    - "60fps_animations"
+    - "smooth_transitions"
+    - "optimized_image_loading"
+    - "minimal_widget_rebuilds"
+  capabilities:
+    - "pinterest_style_masonry_grid"
+    - "material_design_3_implementation"
+    - "responsive_layouts"
+    - "accessibility_compliance"
+    - "performance_optimized_animations"
+    - "lazy_loading_implementation"
+  output_formats: ["optimized_flutter_widgets", "performance_metrics", "ux_benchmarks"]
+
+# Analytics Subagent
+analytics_subagent:
+  specialization: "business_intelligence"
+  role_focus: ["admin", "handlowiec", "partner"]
+  capabilities:
+    - "dashboard_generation"
+    - "kpi_identification"
+    - "chart_creation"
+    - "real_time_analytics"
+    - "role_based_metrics"
+    - "predictive_analytics"
+  output_formats: ["dashboard_widgets", "analytics_services", "report_generators"]
+
+# Security Subagent
+security_subagent:
+  specialization: "security_compliance"
+  focus_areas: ["gdpr", "authorization", "data_protection"]
+  capabilities:
+    - "gdpr_compliance_system"
+    - "authorization_guards"
+    - "firestore_rules_generation"
+    - "security_testing"
+    - "vulnerability_scanning"
+    - "audit_trail_creation"
+  output_formats: ["security_services", "compliance_checks", "audit_systems"]
+
+# Backend Subagent
+backend_subagent:
+  specialization: "firebase_integration"
+  capabilities:
+    - "firestore_schema_design"
+    - "cloud_functions_creation"
+    - "real_time_data_sync"
+    - "offline_functionality"
+    - "payment_integration"
+    - "notification_system"
+  output_formats: ["firebase_config", "cloud_functions", "data_models"]
+
+# Testing Subagent
+testing_subagent:
+  specialization: "quality_assurance"
+  test_types: ["unit", "widget", "integration", "e2e", "security", "performance"]
+  capabilities:
+    - "comprehensive_test_generation"
+    - "coverage_analysis"
+    - "performance_testing"
+    - "security_testing"
+    - "accessibility_testing"
+    - "ci_cd_integration"
+  output_formats: ["test_suites", "coverage_reports", "performance_metrics"]
+

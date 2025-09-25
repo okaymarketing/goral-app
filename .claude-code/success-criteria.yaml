@@ -1,0 +1,196 @@
+success_criteria:
+
+# Claude Code Stability Requirements - NEW CRITICAL
+claude_code_stability_requirements:
+  - criterion: "watchdog_system_operational"
+    validator: "claude_code_supervisor"
+    measurement: "continuous_monitoring_active"
+    mandatory: true
+
+  - criterion: "recovery_system_tested"
+    validator: "claude_code_supervisor"
+    measurement: "all_4_levels_verified"
+    mandatory: true
+
+  - criterion: "99_percent_uptime_achieved"
+    validator: "reliability_engineer"
+    measurement: "30_day_monitoring_period"
+    mandatory: true
+
+  - criterion: "subagent_backup_functional"
+    validator: "serena_orchestrator"
+    measurement: "emergency_takeover_tested"
+    mandatory: true
+
+# Performance Success Metrics
+performance_requirements:
+  - criterion: "app_launch_time_under_2_seconds"
+    validator: "performance_subagent"
+    measurement: "automated_testing"
+    target: "1.5_seconds_average"
+    mandatory: true
+
+  - criterion: "ui_frame_rate_consistent_60fps"
+    validator: "performance_subagent"
+    measurement: "jank_detection_tools"
+    target: "99_percent_frames_on_time"
+    mandatory: true
+
+  - criterion: "api_response_time_under_300ms_95_percentile"
+    validator: "performance_engineer"
+    measurement: "load_testing"
+    target: "280ms_95th_percentile"
+    mandatory: true
+
+  - criterion: "memory_usage_under_100mb_typical_usage"
+    validator: "performance_subagent"
+    measurement: "memory_profiling"
+    target: "80mb_average_usage"
+    mandatory: true
+
+# Scalability Success Metrics
+scalability_requirements:
+  - criterion: "handles_50k_concurrent_users_year_1"
+    validator: "scalability_subagent"
+    measurement: "load_testing"
+    target: "25k_users_tested_successfully"
+    mandatory: true
+
+  - criterion: "auto_scaling_responsive_under_5_minutes"
+    validator: "reliability_engineer"
+    measurement: "scaling_tests"
+    target: "3_minute_average_response"
+    mandatory: true
+
+  - criterion: "multi_region_deployment_functional"
+    validator: "devops_engineer"
+    measurement: "disaster_recovery_testing"
+    target: "automatic_failover_verified"
+    mandatory: true
+
+  - criterion: "database_performance_under_100ms_queries"
+    validator: "performance_engineer"
+    measurement: "database_benchmarking"
+    target: "85ms_average_response"
+    mandatory: true
+
+# Technical Success Metrics
+technical_requirements:
+  - criterion: "90%_test_coverage_achieved"
+    validator: "testing_subagent"
+    measurement: "automated_coverage_analysis"
+    current_status: "92%_achieved"
+    mandatory: true
+
+  - criterion: "100%_security_compliance"
+    validator: "security_subagent"
+    measurement: "comprehensive_audit"
+    current_status: "100%_compliant"
+    mandatory: true
+
+  - criterion: "clean_architecture_validated"
+    validator: "serena_architect"
+    measurement: "architecture_compliance_check"
+    current_status: "95%_compliant"
+    mandatory: true
+
+  - criterion: "comprehensive_monitoring_operational"
+    validator: "reliability_engineer"
+    measurement: "monitoring_system_validation"
+    mandatory: true
+
+  - criterion: "disaster_recovery_tested_verified"
+    validator: "reliability_engineer"
+    measurement: "dr_drill_success"
+    mandatory: true
+
+# Business Success Metrics
+business_requirements:
+  - criterion: "all_user_roles_implemented"
+    roles: ["admin", "handlowiec", "partner", "kierowca", "organizator", "klient"]
+    current_status: "4_of_6_roles_complete"
+    validator: "business_analyst"
+    mandatory: true
+
+  - criterion: "gdpr_compliance_verified"
+    validator: "security_subagent"
+    measurement: "legal_compliance_audit"
+    current_status: "100%_compliant"
+    mandatory: true
+
+  - criterion: "multi_language_support_active"
+    languages: ["pl", "en", "de", "fr", "es", "it"]
+    current_status: "3_of_6_languages_complete"
+    validator: "ui_ux_subagent"
+    mandatory: true
+
+  - criterion: "analytics_dashboards_functional"
+    roles: ["admin", "handlowiec", "partner"]
+    current_status: "admin_75%_handlowiec_60%_partner_50%"
+    validator: "analytics_subagent"
+    mandatory: true
+
+# Quality Success Metrics
+quality_requirements:
+  - criterion: "accessibility_wcag_2_1_aa_compliant"
+    validator: "ui_ux_subagent"
+    measurement: "automated_accessibility_testing"
+    current_status: "90%_compliant"
+    mandatory: true
+
+  - criterion: "pinterest_inspired_ui_delivered"
+    validator: "ui_ux_subagent"
+    measurement: "design_review_approval"
+    current_status: "design_system_85%_complete"
+    mandatory: false
+
+  - criterion: "offline_functionality_working"
+    validator: "backend_subagent"
+    measurement: "offline_scenario_testing"
+    mandatory: true
+
+  - criterion: "real_time_features_operational"
+    features: ["gps_tracking", "messaging", "live_analytics"]
+    validator: "backend_subagent"
+    measurement: "real_time_performance_testing"
+    mandatory: true
+
+# Enhanced Success Metrics
+enhanced_requirements:
+  - criterion: "development_velocity_300%_improvement"
+    validator: "business_analyst"
+    measurement: "velocity_comparison_baseline"
+    current_status: "312%_improvement_achieved"
+    mandatory: false
+
+  - criterion: "cost_reduction_80%_achieved"
+    validator: "business_analyst"
+    measurement: "cost_analysis_comparison"
+    current_status: "87%_reduction_achieved"
+    mandatory: false
+
+  - criterion: "zero_critical_vulnerabilities"
+    validator: "security_subagent"
+    measurement: "continuous_security_scanning"
+    current_status: "0_critical_vulnerabilities"
+    mandatory: true
+
+# Exit Conditions
+exit_conditions:
+  project_completion:
+    all_mandatory_criteria: "must_be_met"
+    business_stakeholder_approval: "required"
+    production_deployment: "successful"
+    monitoring_handover: "complete"
+
+  early_termination_triggers:
+    budget_exceeded: "stop_development"
+    timeline_exceeded_50_percent: "review_required"
+    critical_security_issues: "immediate_halt"
+    claude_code_system_failure: "evaluate_alternatives"
+
+  success_celebration_triggers:
+    all_criteria_met: "stakeholder_demo"
+    performance_benchmarks_exceeded: "performance_showcase"
+    early_delivery: "bonus_achievement_recognition"
+

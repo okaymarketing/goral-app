@@ -1,0 +1,64 @@
+# .claude-code/git-workflows.yaml
+git_automation_workflows:
+
+  # Continuous Development Workflow
+  continuous_development:
+    - name: "subagent_task_completion"
+      trigger: "subagent_finishes_task"
+      sequence:
+        - "validate_task_completion"
+        - "run_affected_tests"
+        - "commit_with_auto_message"
+        - "update_progress_tracking"
+
+    - name: "daily_progress_backup"
+      trigger: "daily_18_00"
+      sequence:
+        - "commit_work_in_progress"
+        - "push_to_feature_branch"
+        - "create_daily_backup_branch"
+        - "update_project_dashboard"
+        - "notify_stakeholders_progress"
+
+  # Quality Assurance Workflow
+  quality_assurance:
+    - name: "pre_commit_validation"
+      trigger: "before_any_commit"
+      sequence:
+        - "run_security_scan"
+        - "execute_affected_tests"
+        - "validate_code_standards"
+        - "check_performance_regression"
+        - "verify_claude_code_health"
+
+    - name: "milestone_finalization"
+      trigger: "milestone_completion"
+      sequence:
+        - "run_comprehensive_test_suite"
+        - "validate_all_quality_gates"
+        - "generate_milestone_report"
+        - "commit_with_milestone_tag"
+        - "push_to_develop_branch"
+        - "create_pull_request_to_main"
+
+  # Collaboration Workflow
+  collaboration:
+    - name: "automated_pr_management"
+      trigger: "feature_branch_ready"
+      sequence:
+        - "create_pull_request"
+        - "add_automated_description"
+        - "include_performance_metrics"
+        - "assign_reviewers"
+        - "link_related_issues"
+
+    - name: "release_workflow"
+      trigger: "production_deployment_ready"
+      sequence:
+        - "create_release_branch"
+        - "generate_changelog"
+        - "create_release_tag"
+        - "deploy_to_production"
+        - "merge_to_main"
+        - "notify_stakeholders"
+

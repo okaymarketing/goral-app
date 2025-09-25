@@ -1,0 +1,110 @@
+claude_rules:
+
+# Security Rules - MANDATORY ENFORCEMENT
+security_mandatory:
+  forbidden_patterns:
+    - pattern: "userRole.*=="
+      message: "Direct role comparison forbidden. Use AuthorizationGuard"
+      auto_fix: "replace_with_authorization_guard"
+
+    - pattern: "user\\\\.role.*admin"
+      message: "Hardcoded role check forbidden"
+      auto_fix: "replace_with_secure_widget"
+
+    - pattern: "@skipAuthorization"
+      message: "Authorization bypass forbidden"
+      action: "block_deployment"
+
+  required_patterns:
+    - pattern: "SecureWidget"
+      scope: "sensitive_widgets"
+      message: "All sensitive widgets must use SecureWidget wrapper"
+
+    - pattern: "AuthorizationGuard.checkPermission"
+      scope: "api_calls"
+      message: "All API calls must check permissions"
+
+  firestore_rules_validation:
+    require_role_checks: true
+    forbid_open_access: true
+    mandate_audit_trails: true
+
+# Performance Rules - ENFORCED
+performance_mandatory:
+  widget_performance:
+    - pattern: "const.*constructor"
+      scope: "all_widgets"
+      message: "All widgets must use const constructors where possible"
+      enforcement: "warning"
+
+    - pattern: "RepaintBoundary"
+      scope: "expensive_widgets"
+      message: "Expensive widgets must use RepaintBoundary"
+      enforcement: "required"
+
+  build_performance:
+    max_build_time: "16ms"
+    jank_tolerance: "zero_tolerance"
+    memory_leak_detection: "automatic"
+
+  api_performance:
+    max_response_time: "2000ms"
+    retry_strategy: "required"
+    caching_strategy: "mandatory_for_repeated_calls"
+
+# Code Quality Rules
+code_quality:
+  architecture_compliance:
+    enforce_clean_architecture: true
+    require_dependency_injection: true
+    mandate_error_handling: true
+
+  testing_requirements:
+    minimum_coverage: 90
+    required_test_types: ["unit", "widget", "integration", "security", "performance"]
+
+  documentation_standards:
+    public_api_documentation: "mandatory"
+    code_comments: "for_complex_logic"
+    readme_maintenance: "up_to_date"
+
+# UI/UX Standards
+ui_ux_standards:
+  accessibility_compliance: "WCAG_2_1_AA"
+  responsive_breakpoints: ["mobile", "tablet", "desktop"]
+  animation_frame_rate: "60fps"
+  pinterest_inspiration: true
+  material_design_version: 3
+
+  design_system_compliance:
+    color_palette: "enforce_brand_colors"
+    typography: "consistent_font_hierarchy"
+    spacing: "8dp_grid_system"
+
+# Business Rules
+business_compliance:
+  gdpr_mandatory: true
+  multi_language_support: true
+  role_based_access: true
+  analytics_by_role: true
+  offline_functionality: true
+
+  data_handling:
+    encryption_at_rest: "mandatory"
+    encryption_in_transit: "mandatory"
+    data_retention_policies: "automated_enforcement"
+
+# Development Workflow Rules
+development_workflow:
+  pre_commit_checks:
+    - "security_scan_pass"
+    - "test_coverage_check"
+    - "performance_regression_check"
+    - "code_style_compliance"
+
+  deployment_gates:
+    - "all_tests_pass"
+    - "security_audit_clean"
+    - "performance_benchmarks_met"
+    - "accessibility_compliance_verified"
+

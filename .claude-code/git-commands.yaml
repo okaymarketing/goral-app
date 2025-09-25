@@ -1,0 +1,104 @@
+git_command_extensions:
+
+  # Project Initialization Commands
+  initialization_commands:
+    init_with_repo:
+      command: "claude-code git init"
+      options:
+        - "--repo-url=<github_url>"
+        - "--branch-strategy=gitflow"
+        - "--auto-setup"
+      description: "Initialize Claude Code project with Git integration"
+
+    clone_and_setup:
+      command: "claude-code git clone <repo_url>"
+      options:
+        - "--ecosystem-setup"
+        - "--auto-configure"
+      description: "Clone existing project and setup Claude Code ecosystem"
+
+  # Development Workflow Commands
+  development_commands:
+    smart_commit:
+      command: "claude-code git commit"
+      options:
+        - "--auto-message"        # Generate commit message based on changes
+        - "--include-metrics"     # Add performance/quality metrics
+        - "--link-issues"         # Auto-link to GitHub issues
+      description: "Intelligent commit with automated message generation"
+
+    safe_push:
+      command: "claude-code git push"
+      options:
+        - "--validate-first"      # Run quality checks before push
+        - "--branch=<branch_name>" # Specify target branch
+        - "--create-pr"           # Auto-create pull request
+      description: "Push with comprehensive validation"
+
+    feature_workflow:
+      command: "claude-code git feature <feature_name>"
+      actions:
+        - "create_feature_branch"
+        - "setup_development_environment"
+        - "initialize_subagent_tasks"
+      description: "Complete feature development workflow"
+
+  # Milestone & Release Commands
+  milestone_commands:
+    milestone_commit:
+      command: "claude-code git milestone <milestone_name>"
+      actions:
+        - "run_comprehensive_tests"
+        - "generate_performance_report"
+        - "create_milestone_commit"
+        - "push_to_milestone_branch"
+        - "create_milestone_tag"
+      description: "Complete milestone finalization and commit"
+
+    release_preparation:
+      command: "claude-code git release <version>"
+      actions:
+        - "validate_all_quality_gates"
+        - "generate_changelog"
+        - "create_release_branch"
+        - "prepare_production_deployment"
+      description: "Prepare production release"
+
+  # Backup & Recovery Commands
+  backup_commands:
+    emergency_backup:
+      command: "claude-code git backup --emergency"
+      actions:
+        - "commit_current_work"
+        - "push_to_multiple_remotes"
+        - "create_emergency_tag"
+        - "notify_stakeholders"
+      description: "Emergency backup of current work"
+
+    restore_from_backup:
+      command: "claude-code git restore <backup_point>"
+      options:
+        - "--verify-integrity"
+        - "--restore-ecosystem"
+      description: "Restore project from backup point"
+
+  # Monitoring & Health Commands
+  health_commands:
+    repo_health_check:
+      command: "claude-code git health"
+      checks:
+        - "repository_integrity"
+        - "branch_synchronization"
+        - "backup_status"
+        - "collaboration_metrics"
+      description: "Comprehensive repository health check"
+
+    sync_status:
+      command: "claude-code git sync-status"
+      displays:
+        - "local_vs_remote_differences"
+        - "pending_commits"
+        - "claude_code_changes"
+        - "subagent_contributions"
+      description: "Show synchronization status across ecosystem"
+

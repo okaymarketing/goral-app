@@ -1,0 +1,122 @@
+git_integration:
+  repository_configuration:
+    auto_detection: true
+    initialization_strategy: "detect_or_prompt"
+
+  version_control_strategy:
+    main_branch: "main"
+    development_branch: "develop"
+    feature_branch_prefix: "feature/"
+    hotfix_branch_prefix: "hotfix/"
+    release_branch_prefix: "release/"
+
+  automated_workflows:
+    auto_commit:
+      enabled: true
+      trigger_conditions:
+        - "subagent_task_completion"
+        - "milestone_achievement"
+        - "quality_gate_passed"
+        - "daily_progress_checkpoint"
+
+      commit_message_format:
+        feature: "feat({subagent}): {task_description} - {completion_percentage}%"
+        fix: "fix({component}): {issue_description}"
+        docs: "docs: update {documentation_section}"
+        performance: "perf({area}): {optimization_description}"
+        security: "security: {security_improvement}"
+
+    auto_push:
+      enabled: true
+      frequency: "task_completion_and_daily_backup"
+      conditions:
+        - "all_tests_pass"
+        - "security_scan_clean"
+        - "no_critical_issues"
+        - "claude_code_health_stable"
+
+      push_strategy:
+        feature_development: "push_to_feature_branch"
+        milestone_completion: "create_pull_request_to_develop"
+        production_ready: "create_release_branch"
+
+  backup_strategy:
+    daily_backup:
+      enabled: true
+      time: "18:00_local_time"
+      branch: "backup/daily-{date}"
+      retention: "30_days"
+
+    hourly_checkpoint:
+      enabled: true
+      during_active_development: true
+      branch: "checkpoint/hour-{timestamp}"
+      retention: "7_days"
+
+    milestone_backup:
+      enabled: true
+      trigger: "phase_completion"
+      branch: "milestone/{phase_name}-{date}"
+      retention: "permanent"
+      create_tag: true
+
+  github_integration:
+    automated_pr_creation:
+      enabled: true
+      trigger: "feature_completion"
+      target_branch: "develop"
+      auto_description: true
+      include_metrics: true
+
+    release_management:
+      auto_tagging: true
+      version_strategy: "semantic_versioning"
+      changelog_generation: true
+      release_notes: "automated_from_commits"
+
+    branch_protection:
+      main_branch: "require_pr_review"
+      develop_branch: "require_status_checks"
+      status_checks:
+        - "security_scan_pass"
+        - "test_coverage_90_percent"
+        - "performance_benchmarks_met"
+
+  collaboration_features:
+    commit_attribution:
+      claude_code_commits: "Claude Code System <claude-code@project.dev>"
+      subagent_commits: "{subagent_name} Subagent <{subagent}@project.dev>"
+      serena_commits: "Serena Orchestrator <serena@project.dev>"
+
+    progress_tracking:
+      issue_linking: "auto_link_commits_to_issues"
+      progress_updates: "automated_progress_comments"
+      milestone_tracking: "github_milestones_integration"
+
+  quality_assurance:
+    pre_commit_hooks:
+      - "security_scan"
+      - "test_execution"
+      - "code_formatting"
+      - "dependency_check"
+      - "performance_regression_check"
+
+    pre_push_validation:
+      - "full_test_suite"
+      - "architecture_compliance"
+      - "claude_code_health_check"
+      - "integration_tests"
+
+  disaster_recovery:
+    git_backup_strategy:
+      multiple_remotes: true
+      backup_repositories:
+        - "origin: primary_github_repo"
+        - "backup: secondary_gitlab_repo"
+        - "local: local_git_server"
+
+    recovery_procedures:
+      corruption_detection: "automated_integrity_checks"
+      automatic_restoration: "from_most_recent_clean_backup"
+      manual_intervention: "detailed_recovery_procedures"
+
